@@ -34,7 +34,7 @@ export const Row = styled.div`
   img {
     margin-right: 5px;
   }
-  ${breakpoint('md')`
+  ${breakpoint('lg')`
     display: flex;
     padding-top: ${props => (props.seccond ? '0' : '10px')};
   `}
@@ -49,7 +49,7 @@ export const Btn = styled.div`
       color: ${colors.palette.secondary};
     }
   }
-  ${breakpoint('md')`
+  ${breakpoint('lg')`
     display: none;
   `}
 `;
@@ -94,7 +94,8 @@ export const Item = styled.li`
   cursor: pointer;
   display: flex;
   position: ${props => (props.btn ? 'absolute' : 'initial')};
-  right: 20px;
+  right: 40px;
+  top: 24px;
   &:hover {
     color: ${colors.palette.secondary};
   }

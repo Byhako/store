@@ -5,10 +5,9 @@ export const WrapperBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 24px;
   border: none;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: ${props => (props.big ? '18px' : '14px')};
   padding: 8px 15px;
   background-color: ${colors.palette.button};
   color: ${colors.palette.white};

@@ -9,7 +9,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-
+import { Link } from 'react-router-dom';
 import { useInjectSaga } from 'utils/injectSaga';
 import makeSelectHeader from './selectors';
 import saga from './saga';
@@ -48,7 +48,9 @@ export function Header() {
           <Item>Help</Item>
         </List>
         <Item btn>
-          <Button noMargin text="Create Account" />
+          <Link to="/createAccount">
+            <Button noMargin text="Create Account" />
+          </Link>
           <Spacer />
           <Button noMargin text="Login" />
         </Item>

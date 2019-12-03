@@ -9,7 +9,7 @@ export const colors = {
     backgroundLoading: 'rgba(0, 0, 0, 0.3)',
     error: 'rgb(164, 38, 44)',
     black: '#000',
-    gray1: '#494848',
+    gray1: '#8c8989',
     white: '#fff',
   },
 };
@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #app {
-    background-color: #fafafa;
+    background-color: #f4f4f8;
     min-height: 100%;
     min-width: 100%;
   }
