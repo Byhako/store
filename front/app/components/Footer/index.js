@@ -1,13 +1,15 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 
-import messages from './messages';
+import { Content } from './styles';
 
 function Footer() {
   return (
-    <section>
-      <FormattedMessage {...messages.licenseMessage} />
-    </section>
+    <Content>
+      A brand created by&nbsp;
+      <a href="https://github.com/Byhako" target="_blank">
+        Byhako
+      </a>
+    </Content>
   );
 }
 

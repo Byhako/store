@@ -16,7 +16,7 @@ import saga from './saga';
 
 import logo from '../../images/iconStore.png';
 import Button from '../../components/Button';
-import { Nav, Row, Form, List, Item, Btn } from './styles';
+import { Nav, Row, Form, List, Item, Btn, Spacer } from './styles';
 
 export function Header() {
   useInjectSaga({ key: 'header', saga });
@@ -35,9 +35,6 @@ export function Header() {
           </button>
         </Form>
 
-        <Btn big>
-          <Button text="Login" />
-        </Btn>
         <Btn small>
           <i className="fas fa-bars" />
         </Btn>
@@ -49,8 +46,12 @@ export function Header() {
           <Item>Offers</Item>
           <Item>Sell</Item>
           <Item>Help</Item>
-          <Button noMargin text="Create Account" />
         </List>
+        <Item btn>
+          <Button noMargin text="Create Account" />
+          <Spacer />
+          <Button noMargin text="Login" />
+        </Item>
       </Row>
     </Nav>
   );

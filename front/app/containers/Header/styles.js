@@ -34,14 +34,14 @@ export const Row = styled.div`
   img {
     margin-right: 5px;
   }
-  ${breakpoint('sm')`
+  ${breakpoint('md')`
     display: flex;
     padding-top: ${props => (props.seccond ? '0' : '10px')};
   `}
 `;
 
 export const Btn = styled.div`
-  display: ${props => (props.small ? 'flex' : 'none')};
+  display: flex;
   margin: 0 auto;
   i {
     cursor: pointer;
@@ -49,8 +49,8 @@ export const Btn = styled.div`
       color: ${colors.palette.secondary};
     }
   }
-  ${breakpoint('sm')`
-    display: ${props => (props.big ? 'flex' : 'none')};
+  ${breakpoint('md')`
+    display: none;
   `}
 `;
 
@@ -76,9 +76,6 @@ export const Form = styled.form`
     color: #494848;
     cursor: pointer;
   }
-  ${breakpoint('md')`
-    width: 70%;
-  `}
 `;
 
 export const List = styled.ul`
@@ -86,14 +83,23 @@ export const List = styled.ul`
   flex-direction: row;
   align-items: center;
   margin: 0;
-  width: 100%;
+  width: 60%;
   justify-content: space-around;
   font-size: 12px;
+  padding: 0;
+  margin-left: 120px;
 `;
 
 export const Item = styled.li`
   cursor: pointer;
+  display: flex;
+  position: ${props => (props.btn ? 'absolute' : 'initial')};
+  right: 20px;
   &:hover {
     color: ${colors.palette.secondary};
   }
+`;
+
+export const Spacer = styled.div`
+  width: 10px;
 `;
