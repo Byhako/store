@@ -47,7 +47,7 @@ const MOUNT_NODE = document.getElementById('app');
 const theme = {
   breakpoints: {
     xs: 420,
-    sm: 568,
+    sm: 500,
     md: 768,
     lg: 991,
     xl: 1200,

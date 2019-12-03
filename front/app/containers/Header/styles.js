@@ -10,28 +10,48 @@ export const Nav = styled.nav`
 `;
 
 export const Row = styled.div`
-  display: flex;
+  display: ${props => (props.seccond ? 'none' : 'flex')};
   flex-direction: row;
   align-items: center;
   padding: 10px;
-  padding-top: ${props => (props.seccond ? '0' : '10px')};
+  padding-top: 0;
   a {
     color: ${colors.palette.white};
     display: flex;
     align-items: center;
     margin-right: 20px;
-    min-width: 100px;
+    min-width: 30px;
+    font-size: 0;
     &:hover {
       color: ${colors.palette.secondary};
       text-decoration: none;
     }
+    ${breakpoint('xs')`
+      font-size: 1rem;
+      min-width: 100px;
+    `}
   }
   img {
     margin-right: 5px;
   }
-  // ${breakpoint('sm')`
-  //   height: 600px;
-  // `}
+  ${breakpoint('sm')`
+    display: flex;
+    padding-top: ${props => (props.seccond ? '0' : '10px')};
+  `}
+`;
+
+export const Btn = styled.div`
+  display: ${props => (props.small ? 'flex' : 'none')};
+  margin: 0 auto;
+  i {
+    cursor: pointer;
+    &:hover {
+      color: ${colors.palette.secondary};
+    }
+  }
+  ${breakpoint('sm')`
+    display: ${props => (props.big ? 'flex' : 'none')};
+  `}
 `;
 
 export const Form = styled.form`
