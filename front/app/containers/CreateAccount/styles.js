@@ -21,6 +21,7 @@ export const Header = styled.nav`
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   padding: 10px;
   justify-content: space-between;
@@ -43,16 +44,32 @@ export const Row = styled.div`
 `;
 
 export const Content = styled.div`
-  margin-top: 30px;
-  width: 60%;
+  margin-top: 0px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: white;
+  padding-bottom: 20px;
+  ${breakpoint('md')`
+    background-color: inherit;
+    width: 60%;
+    margin-top: 50px;
+    padding: 0;
+  `}
 `;
 
 export const Title = styled.p`
   font-size: 24px;
   font-weight: 600;
+  font-family: inherit;
+  text-align: center;
+  margin-top: 20px;
+  ${breakpoint('md')`
+    text-align: inherit;
+    margin-top: 0px;
+
+  `}
 `;
 
 export const Form = styled.form``;
@@ -64,7 +81,7 @@ export const Box = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 40%;
+  width: 100%;
   border: none;
   border-bottom: 1px solid ${colors.palette.gray1};
   margin: 20px 0;
@@ -74,4 +91,15 @@ export const Input = styled.input`
     border: 0;
     border-bottom: 2px solid ${colors.palette.secondary};
   }
+  ${breakpoint('md')`
+    width: 40%;
+  `}
+`;
+
+export const Btn = styled.div`
+  display: flex;
+  justify-content: center;
+  ${breakpoint('md')`
+    justify-content: inherit;
+  `}
 `;

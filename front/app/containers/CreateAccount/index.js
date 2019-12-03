@@ -25,6 +25,7 @@ import {
   Form,
   Box,
   Input,
+  Btn,
 } from './styles';
 
 export function CreateAccount() {
@@ -62,7 +63,9 @@ export function CreateAccount() {
               />
             </Row>
           </Box>
-          <Button noMargin big text="Create Account" type="submit" />
+          <Btn>
+            <Button noMargin big text="Create Account" type="submit" />
+          </Btn>
         </Form>
       </Content>
     </Container>
