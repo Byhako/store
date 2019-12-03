@@ -1,0 +1,8 @@
+front/node_modules
+front/build
+front/coverage
+front/stats.json
+
+front/.DS_Store
+front/npm-debug.log
+front/.idea
