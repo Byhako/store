@@ -15,7 +15,7 @@ export const WrapperBtn = styled.button`
   border-bottom: 2px solid ${colors.palette.border};
   border-right: 2px solid ${colors.palette.border};
   cursor: pointer;
-  margin: 0 auto;
+  margin: ${props => (props.noMargin ? '0' : '0 auto')};
   &:hover {
     color: ${colors.palette.secondary};
   }

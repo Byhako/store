@@ -20,6 +20,7 @@ export const Row = styled.div`
     display: flex;
     align-items: center;
     margin-right: 20px;
+    min-width: 100px;
     &:hover {
       color: ${colors.palette.secondary};
       text-decoration: none;
@@ -37,7 +38,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 70%;
+  width: 60%;
   input {
     width: calc(100% - 24px);
     border: none;
@@ -55,6 +56,9 @@ export const Form = styled.form`
     color: #494848;
     cursor: pointer;
   }
+  ${breakpoint('md')`
+    width: 70%;
+  `}
 `;
 
 export const List = styled.ul`
@@ -62,7 +66,7 @@ export const List = styled.ul`
   flex-direction: row;
   align-items: center;
   margin: 0;
-  width: calc(70% + 120px);
+  width: 100%;
   justify-content: space-around;
   font-size: 12px;
 `;

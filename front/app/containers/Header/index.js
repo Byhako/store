@@ -44,8 +44,8 @@ export function Header() {
           <Item>Offers</Item>
           <Item>Sell</Item>
           <Item>Help</Item>
+          <Button noMargin text="Create Account" />
         </List>
-        <Button text="Create Account" />
       </Row>
     </Nav>
   );

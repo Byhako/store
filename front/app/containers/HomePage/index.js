@@ -14,13 +14,19 @@ import { createStructuredSelector } from 'reselect';
 import { useInjectSaga } from 'utils/injectSaga';
 import { makeSelectUsername } from './selectors';
 import saga from './saga';
+import Header from '../Header';
 
 const key = 'home';
 
 export function HomePage() {
   useInjectSaga({ key, saga });
 
-  return <div>HOLA</div>;
+  return (
+    <div>
+      <Header />
+      Hola
+    </div>
+  );
 }
 
 HomePage.propTypes = {};

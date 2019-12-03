@@ -12,7 +12,6 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import Header from 'containers/Header';
 import Footer from 'components/Footer';
 
 import GlobalStyle from '../../global-styles';
@@ -29,7 +28,6 @@ const AppWrapper = styled.div`
 export default function App() {
   return (
     <AppWrapper>
-      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="" component={NotFoundPage} />
