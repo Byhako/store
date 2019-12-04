@@ -52,7 +52,9 @@ export function Header() {
             <Button noMargin text="Create Account" />
           </Link>
           <Spacer />
-          <Button noMargin text="Login" />
+          <Link to="/login">
+            <Button noMargin text="Login" />
+          </Link>
         </Item>
       </Row>
     </Nav>

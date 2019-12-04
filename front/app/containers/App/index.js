@@ -12,6 +12,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import CreateAccount from 'containers/CreateAccount/Loadable';
+import Login from 'containers/Login/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Footer from 'components/Footer';
 
@@ -32,6 +33,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/createAccount" component={CreateAccount} />
+        <Route exact path="/login" component={Login} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

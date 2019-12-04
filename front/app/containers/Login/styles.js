@@ -54,6 +54,7 @@ export const Content = styled.div`
   ${breakpoint('md')`
     background-color: inherit;
     width: 60%;
+    max-width: 500px;
     margin-top: 50px;
     padding: 0;
   `}
@@ -94,9 +95,6 @@ export const Input = styled.input`
     border: 0;
     border-bottom: 2px solid ${colors.palette.secondary};
   }
-  ${breakpoint('md')`
-    width: 40%;
-  `}
 `;
 
 export const Btn = styled.div`

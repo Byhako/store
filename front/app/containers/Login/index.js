@@ -1,6 +1,6 @@
 /**
  *
- * CreateAccount
+ * Login
  *
  */
 
@@ -13,7 +13,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 import { useInjectSaga } from 'utils/injectSaga';
-import makeSelectCreateAccount from './selectors';
+import makeSelectLogin from './selectors';
 import saga from './saga';
 import logo from '../../images/iconStore.png';
 import Button from '../../components/Button';
@@ -30,8 +30,8 @@ import {
   Btn,
 } from './styles';
 
-export function CreateAccount() {
-  useInjectSaga({ key: 'createAccount', saga });
+export function Login() {
+  useInjectSaga({ key: 'login', saga });
 
   const handleSumbit = e => {
     e.preventDefault();
@@ -40,8 +40,8 @@ export function CreateAccount() {
   return (
     <Container>
       <Helmet>
-        <title>Create Account</title>
-        <meta name="createAccoun" content="screen to create account" />
+        <title>login</title>
+        <meta name="login" content="screen login" />
       </Helmet>
       <Header>
         <Row>
@@ -53,15 +53,13 @@ export function CreateAccount() {
       </Header>
 
       <Content>
-        <Title>Complete Your Data</Title>
+        <Title>Enter Your Data To Login</Title>
         <Form onSubmit={handleSumbit}>
           <Box>
             <Row>
-              <Input type="text" aria-label="name" placeholder="Name" />
-              <Input type="text" aria-label="surname" placeholder="Surname" />
+              <Input type="email" aria-label="email" placeholder="E-mail" />
             </Row>
             <Row>
-              <Input type="email" aria-label="email" placeholder="E-mail" />
               <Input
                 type="password"
                 aria-label="password"
@@ -70,7 +68,10 @@ export function CreateAccount() {
             </Row>
           </Box>
           <Btn>
-            <Button noMargin big text="Create Account" type="submit" />
+            <Button noMargin big text="Login" type="submit" />
+            <Link to="/forgotPassword">
+              <span>Forgot Your Password?</span>
+            </Link>
             <Link to="/">
               <span>Go Back</span>
             </Link>
@@ -81,10 +82,10 @@ export function CreateAccount() {
   );
 }
 
-CreateAccount.propTypes = {};
+Login.propTypes = {};
 
 const mapStateToProps = createStructuredSelector({
-  createAccount: makeSelectCreateAccount(),
+  login: makeSelectLogin(),
 });
 
 function mapDispatchToProps(dispatch) {
@@ -98,4 +99,4 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 
-export default compose(withConnect)(CreateAccount);
+export default compose(withConnect)(Login);
