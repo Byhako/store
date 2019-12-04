@@ -10,6 +10,7 @@ export const colors = {
     error: 'rgb(164, 38, 44)',
     black: '#000',
     gray1: '#8c8989',
+    gray2: '#8c8989',
     white: '#fff',
   },
 };

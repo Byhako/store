@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { colors } from '../../global-styles';
@@ -45,6 +46,7 @@ export const Btn = styled.div`
   margin: 0 auto;
   i {
     cursor: pointer;
+    font-size: 22px;
     &:hover {
       color: ${colors.palette.secondary};
     }
@@ -88,14 +90,27 @@ export const List = styled.ul`
   font-size: 12px;
   padding: 0;
   margin-left: 120px;
+  a {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    margin: 0;
+    &:hover {
+      color: ${colors.palette.secondary};
+    }
+  }
 `;
 
 export const Item = styled.li`
   cursor: pointer;
   display: flex;
-  position: ${props => (props.btn ? 'absolute' : 'initial')};
+  position: absolute;
   right: 40px;
   top: 24px;
+  a {
+    margin: 0;
+    min-width: 25px;
+  }
   &:hover {
     color: ${colors.palette.secondary};
   }
@@ -103,4 +118,39 @@ export const Item = styled.li`
 
 export const Spacer = styled.div`
   width: 10px;
+`;
+
+export const Menu = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: white;
+  p {
+    font-family: inherit;
+    margin: 5px 0;
+  }
+  ${breakpoint('lg')`
+    display: none;
+  `}
+`;
+
+export const Section = styled.section`
+  padding: 10px;
+  border-bottom: ${props => (props.end ? 'none' : `1px dashed ${colors.palette.gray1}`)};
+`;
+
+export const Line = styled.div`
+  display: flex;
+  justify-content: ${props => (props.btn ? 'space-around' : 'start')};
+  align-items: center;
+  padding: 5px 0;
+  a {
+    color: black;
+    &:hover {
+      color: ${colors.palette.secondary};
+    }
+  }
+  i {
+    margin-right: 5px;
+    width: 15px;
+  }
 `;

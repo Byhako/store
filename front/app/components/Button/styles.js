@@ -7,8 +7,17 @@ export const WrapperBtn = styled.button`
   align-items: center;
   border: none;
   border-radius: 4px;
-  font-size: ${props => (props.big ? '18px' : '14px')};
+  font-size: ${props => {
+    if (props.big) {
+      return '18px';
+    }
+    if (props.small) {
+      return '12px';
+    }
+    return '14px';
+  }};
   padding: 8px 15px;
+  padding: ${props => (props.long ? '8px 30px' : '8px 15px')};
   background-color: ${colors.palette.button};
   color: ${colors.palette.white};
   border-bottom: 2px solid ${colors.palette.border};
