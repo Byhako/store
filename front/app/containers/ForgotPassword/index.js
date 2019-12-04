@@ -5,35 +5,81 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import { Link } from 'react-router-dom';
 
 import { useInjectSaga } from 'utils/injectSaga';
-import { useInjectReducer } from 'utils/injectReducer';
 import makeSelectForgotPassword from './selectors';
-import reducer from './reducer';
 import saga from './saga';
+import logo from '../../images/iconStore.png';
+import Button from '../../components/Button';
+
+import {
+  Container,
+  Header,
+  Row,
+  Content,
+  Title,
+  Form,
+  Box,
+  Input,
+  Btn,
+} from './styles';
 
 export function ForgotPassword() {
-  useInjectReducer({ key: 'forgotPassword', reducer });
   useInjectSaga({ key: 'forgotPassword', saga });
 
+  const handleSumbit = e => {
+    e.preventDefault();
+  };
+
   return (
-    <div>
+    <Container>
       <Helmet>
-        <title>ForgotPassword</title>
-        <meta name="description" content="Description of ForgotPassword" />
+        <title>Forgot Password</title>
+        <meta name="forgot password" content="Recovery password" />
       </Helmet>
-    </div>
+      <Header>
+        <Row>
+          <a href="/">
+            <img src={logo} width="30" height="30" alt="Logo" />
+            My Store
+          </a>
+        </Row>
+      </Header>
+
+      <Content>
+        <Title>We Will Send a Message to Your Email</Title>
+        <Form onSubmit={handleSumbit}>
+          <Box>
+            <Row>
+              <Input type="email" aria-label="email" placeholder="E-mail" />
+            </Row>
+            <Row>
+              <Input
+                type="email"
+                aria-label="email"
+                placeholder="Confirm E-mail"
+              />
+            </Row>
+          </Box>
+          <Btn>
+            <Button noMargin big text="Send" type="submit" />
+            <Link to="/">
+              <span>Go Back</span>
+            </Link>
+          </Btn>
+        </Form>
+      </Content>
+    </Container>
   );
 }
 
-ForgotPassword.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-};
+ForgotPassword.propTypes = {};
 
 const mapStateToProps = createStructuredSelector({
   forgotPassword: makeSelectForgotPassword(),
